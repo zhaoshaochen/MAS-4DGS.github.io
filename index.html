@@ -51,7 +51,7 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="你的GitHub仓库链接"
+                <a href="https://github.com/zhaoshaochen/MAS-4DGS"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -74,8 +74,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Please replace this text with the actual abstract of your paper. 
-            We present the first method capable of photorealistically reconstructing a non-rigidly deforming scene...
+            High-quality dynamic 3D scene reconstruction with real-time rendering capability remains a central challenge in computer vision. Most existing 4D Gaussian splatting approaches model dynamic scenes by applying spatiotemporal deformations indiscriminately to all Gaussian primitives. However, real-world scenes typically exhibit motion sparsity, where only a few regions move (e.g., pedestrians) and most areas remain nearly static (e.g., buildings). Consequently, this full-scene deformation causes substantial computational redundancy, severely hindering both efficiency and optimization stability. To address these limitations, we propose Motion-Aware Selective 4D Gaussian Splatting. To eliminate this redundancy, we introduce a low runtime overhead motion prediction network that generates per-Gaussian motion mask at each time step. By restricting deformation exclusively to dynamic primitives, we reduce the dominant deformation-branch cost from scaling with all N primitives to scaling with only the K dynamic ones. Second, to ensure stable convergence under selective deformation, we design a self-calibrating two-stage training strategy that mitigates error accumulation and periodically restores global gradient coverage. Finally, to handle topological evolution, we propose a motion-aware densification and pruning mechanism that strictly aligns geometric updates with motion semantics. Extensive experiments show that, compared to state-of-the-art methods, our approach significantly reduces computational cost and accelerates convergence, while achieving promising performance accuracy, especially for sparse-motion scenes common in real-world applications.
           </p>
         </div>
       </div>
@@ -94,16 +93,16 @@
 
     <div class="columns is-centered">
       <div class="column has-text-centered">
-        <h3 class="title is-5">Base 4DGS (RGB)</h3>
+        <h3 class="title is-5">4DGS</h3>
         <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
-          <source src="./static/videos/video_rgb_base.mp4" type="video/mp4">
+          <source src="./static/videos/web_video_rgb_base.mp4" type="video/mp4">
         </video>
       </div>
       
       <div class="column has-text-centered">
-        <h3 class="title is-5">Ours (RGB)</h3>
+        <h3 class="title is-5">Ours</h3>
         <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
-          <source src="./static/videos/video_rgb_ours.mp4" type="video/mp4">
+          <source src="./static/videos/web_video_rgb_ours.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -112,8 +111,6 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            While the visual quality of the RGB renderings appears similar, our method significantly improves the <strong>temporal stability</strong> of the background. To visualize this, we compute the inter-frame difference (<code>|Frame(t) - Frame(t-1)|</code>) as heatmaps. 
-            As shown below, the original 4DGS struggles with background flickering (visible as green/red noise), whereas our approach keeps the static background perfectly stable (dark blue).
           </p>
         </div>
       </div>
@@ -121,16 +118,16 @@
 
     <div class="columns is-centered">
       <div class="column has-text-centered">
-        <h3 class="title is-5">Base 4DGS (Temporal Heatmap)</h3>
+        <h3 class="title is-5">4DGS (Temporal Heatmap)</h3>
         <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
-          <source src="./static/videos/heatmap_temporal_base.mp4" type="video/mp4">
+          <source src="./static/videos/web_heatmap_temporal_base.mp4" type="video/mp4">
         </video>
       </div>
       
       <div class="column has-text-centered">
         <h3 class="title is-5">Ours (Temporal Heatmap)</h3>
         <video autoplay controls muted loop playsinline width="100%" style="border-radius: 8px;">
-          <source src="./static/videos/heatmap_temporal_ours.mp4" type="video/mp4">
+          <source src="./static/videos/web_heatmap_temporal_ours.mp4" type="video/mp4">
         </video>
       </div>
     </div>
